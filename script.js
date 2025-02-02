@@ -126,6 +126,7 @@ document.getElementById('signup-form')?.addEventListener('submit', function(even
     alert("Signed Up");
 });
 
+// Burger
 const burgerMenu = document.querySelector('.burger-menu');
 const nav = document.querySelector('nav');
 
