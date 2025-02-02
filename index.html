@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CritStick</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hentaigana:wght@200..900&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
+</head>
+<body>
+
+    <header id="main-header">
+        <div id="logo-area">
+            <a href="#"><img src="imgs/Logo.png" alt="Logo"></a>
+        </div>
+        <nav>
+            <div class="burger-menu">
+                <div class="burger-icon"></div>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="sign-in-area">
+            <a href="signin.html">Sign In</a>
+        </div>
+    </header>
+
+    <h1>Great Game Deals!</h1>
+
+    <div class="swiper">
+        <div class="swiper-wrapper" id="game-container">
+            </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <section id="blog">
+        <h2>Latest Blog Posts</h2>
+
+        <div class="blog-grid">
+            <div class="accordion-container">
+                <h3>Game Review: Need for Speed Unbound</h3>
+                <div class="acc-descr">
+                    <p>Need for Speed Unbound delivers an exhilarating open-world racing experience with a unique art style and intense cop chases...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <h3>Top 5 Games Under $10</h3>
+                <div class="acc-descr">
+                    <p>Looking for budget-friendly entertainment? Check out our list of the best games you can snag for under ten bucks...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <h3>Indie Game Spotlight: Undying</h3>
+                <div class="acc-descr">
+                    <p>Undying is a captivating zombie survival game with roguelike elements. Can you survive the undead horde and find a cure...</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <h3>Game Review: Stimulation Clicker</h3>
+                <div class="acc-descr">
+                    <p>Check it out in Editor's Picks</p>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <h3>Top 5 Games of the Month</h3>
+                <div class="acc-descr">
+                    <p>Our picks for the best games released this month is the Baazar, Whooooo Reto The Trash Town Mayor</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <h3>Indie Game Spotlight: Animal Well</h3>
+                <div class="acc-descr">
+                    <p>He do be jumping on bubbles</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="video-container">
+        <div class="editors-picks-text">
+            <h2>Editor's Picks</h2>
+            <p>Check out some of our favorite games this week!</p>
+        </div>
+        <div class="video-row">
+            <div class="video-column">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/DuQi5VmEPqM?si=gIjdrXV1eRoZY5H6" title="YouTube video player 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-column">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TJbVXSZrkmw?si=xC4GsCx1nUomv0zI" title="YouTube video player 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-banner">
+        <p>This website uses cookies to ensure you get the best experience on our website. <a href="#">No One Clicks This</a></p>
+        <button onclick="acceptCookies()">Accept Cookies</button>
+    </div>
+
+    <footer id="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, dignissimos! Iusto dolore delectus magnam atque, velit dolor, incidunt veniam quae repellat fugiat, inventore beatae itaque quis! Cupiditate ipsum vitae quam!</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: mail@me.com<br>
+                    Phone: +995 *damireke#</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.x.com">X</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 4023 CritStick. All rights reserved or something.</p>
+        </div>
+    </footer>
+</body>
+</html>

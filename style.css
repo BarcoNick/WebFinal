@@ -1,0 +1,770 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Header Styles */
+#main-header {
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#main-header.hidden {
+    transform: translateY(-100%);
+}
+
+/* Logo Area */
+#logo-area {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-width: 150px;
+    overflow: hidden;
+}
+
+#logo-area a {
+    color: inherit;
+    text-decoration: none;
+    max-height: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+
+#logo-area img {
+    max-height: 40%;
+    max-width: 40%;
+    height: auto;
+    width: auto;
+    object-fit: cover;
+}
+
+/* Navigation Styles */
+nav {
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.burger-icon,
+.burger-icon::before,
+.burger-icon::after {
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    margin: 6px 0;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger-icon::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+}
+
+.burger-icon::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+}
+
+nav.open ul {
+    transform: translateY(0);
+}
+
+nav.open .burger-icon {
+    transform: rotate(45deg);
+}
+
+nav.open .burger-icon::before {
+    opacity: 0;
+}
+
+nav.open .burger-icon::after {
+    transform: rotate(-90deg) translate(-8px, -8px);
+}
+
+/* Sign-in Area Styles */
+#sign-in-area {
+    margin-left: auto;
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#sign-in-area a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: #007bff;
+    transition: background-color 0.2s;
+}
+
+#sign-in-area a:hover {
+    background-color: #0056b3;
+}
+
+/* Swiper Styles */
+.swiper {
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+.swiper-slide {
+    width: 180px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.swiper-pagination,
+.swiper-button-prev,
+.swiper-button-next {
+    color: #333;
+}
+
+/* Game Styles */
+.game {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    width: 100%;
+}
+
+.game:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.game img {
+    max-width: 90%;
+    max-height: 120px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.game p {
+    font-size: 0.8em;
+    margin: 2px 0;
+}
+
+#game-container p.error {
+    text-align: center;
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+/* Blog Styles */
+#blog {
+    padding: 20px;
+    max-width: 960px;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#blog h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.accordion-container {
+    max-width: 100%;
+    border: 1px solid #000;
+    padding: 15px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.accordion-container.active {
+    border-color: #007bff;
+}
+
+.acc-descr {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.accordion-container.active .acc-descr {
+    height: 150px;
+}
+
+.blog-post h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.blog-post p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.blog-post a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
+/* Cookie Banner Styles */
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+#cookie-banner p {
+    margin-bottom: 10px;
+}
+
+#cookie-banner button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#cookie-banner button:hover {
+    background-color: #0056b3;
+}
+
+/* Sign-up and Sign-in Styles */
+
+.signin-container, .signup-container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signin-container h2, .signup-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.signin-container button, .signup-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.signin-container button:hover, .signup-container button:hover {
+    background-color: #0056b3;
+}
+
+.signup-link, .signin-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+/* Styles for the "Show Password" checkbox and label */
+.input-group #show-password {
+    margin-right: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    position: relative;
+    top: 2px;
+}
+
+.input-group #show-password:checked::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: #007bff;
+}
+
+.input-group label[for="show-password"] {
+    margin-top: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* youtube video styles */
+.video-container {
+    width: 80%;
+    max-width: 960px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200px;
+    padding: 10px;
+    background-color: #dedede;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.editors-picks-text {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+    font-family: 'Noto Serif Hentaigana', serif;
+    font-weight: 400;
+}
+
+.editors-picks-text h2 {
+    margin-bottom: 10px;
+}
+
+.video-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.video-column {
+    flex: 1;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+/* footer styles */
+
+#main-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section li {
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* Navigation Styles */
+nav {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.burger-icon,
+.burger-icon::before,
+.burger-icon::after {
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    margin: 6px 0;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger-icon::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+}
+
+.burger-icon::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+}
+
+nav.open ul {
+    transform: translateY(0);
+}
+
+nav.open .burger-icon {
+    transform: rotate(45deg);
+}
+
+nav.open .burger-icon::before {
+    opacity: 0;
+}
+
+nav.open .burger-icon::after {
+    transform: rotate(-90deg) translate(-8px, -8px);
+}
+
+
+/* Mobile Styles (768px and smaller) */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        transform: translateY(-200%);
+        z-index: 0;
+    }
+
+    nav li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    #sign-in-area {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .swiper-slide {
+        width: 90%;
+        margin: 0 auto 10px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-grid > *:nth-child(n+5) {
+        display: none;
+    }
+
+    .video-row {
+        flex-direction: column;
+    }
+
+    .video-column {
+        margin-bottom: 20px;
+    }
+
+    .video-column:nth-child(2) {
+        display: none;
+    }
+
+    #main-footer {
+        font-size: 14px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+/* Small Mobile (480px and smaller) */
+@media (max-width: 480px) {
+    .blog-grid > *:nth-child(n+3) { /* Show only 2 blogs */
+        display: none;
+    }
+}
+
+/* Extra Small Mobile (320px and smaller) */
+@media (max-width: 320px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .swiper-slide {
+        width: 100%;
+    }
+
+    .game-title {
+        font-size: 0.9em;
+    }
+
+    .game p {
+        font-size: 0.7em;
+    }
+}
+
+
+/* Tablet and Larger (768px and larger) */
+@media (min-width: 769px) {
+    nav ul {
+        transform: translateY(0);
+    }
+    .burger-menu {
+        display: none;
+    }
+    nav li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    #sign-in-area {
+        text-align: right;
+        margin-top: 0;
+    }
+
+    .swiper-slide {
+        width: 180px;
+        margin: 0 10px;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .video-row {
+        flex-direction: row;
+    }
+
+    .video-column {
+        margin-bottom: 0;
+    }
+
+    .footer-content {
+        flex-direction: row;
+    }
+
+    .footer-section {
+        text-align: left;
+        margin-bottom: 0;
+    }
+}
+
+/* Desktop (1024px and larger) */
+@media (min-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
